@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+<!--    <base href="TptogiarBlog/">-->
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.js"></script>
+
+</head>
+
+<body>
+    <div class="container" style="height: 100%;padding:5% 0% 5%;">
+        <div class="container jumbotron" style="height: 100%;">
+            <div class="col-md-4 column">
+
+            </div>
+            <div class="col-md-4 column" style="margin-top:3%;">
+                <div class="jumbotron" style="background-color: #c1c1c1;">
+                    <div class="mb-3">
+                        <label ><a href="/TptogiarBlog/">首页</a></label><br/>
+                        <label class="form-label">用户名</label>
+                        <input class="form-control" placeholder="输入用户名或电子邮箱" id="emailOrUsername">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">密码</label>
+                        <input class="form-control" placeholder="输入密码" id="password">
+                    </div>
+                    <label class="form-label">验证码</label>
+                    <div class="container" style="padding: 0px;">
+                        <div class="col-md-4 column " style="padding: 0px;">
+                            <input id="code" class="form-control" style="width: 100px;" placeholder="输入验证码">
+                        </div>
+                        <div class="col-md-3 column"></div>
+                        <div class="col-md-5 column " style="padding: 0px;">
+                            <img id="codeImg" src="/TptogiarBlog/code.jpg" alt="验证码" class="img-thumbnail" style="width:150px;height: 35px;">
+                        </div>
+                    </div>
+                    <h4 class="text-center" style="color:red;" id="msg">&nbsp;</h4>
+                    <button  class="btn btn-primary " id="regist">注册</button>
+
+                    <button  class="btn btn-primary " id="login" style="float: right">Submit</button>
+                </div>
+
+            </div>
+            <div class="col-md-4 column ">
+            </div>
+        </div>
+    </div>
+    <script src="/TptogiarBlog/js/login.js"></script>
+</body>
+
+
+</html>
+

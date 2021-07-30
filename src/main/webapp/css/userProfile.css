@@ -1,0 +1,23 @@
+#userAvatarDisplay {
+    height: 250px;
+    position: relative;
+}
+.mask {
+    position: absolute;
+    top:0px;
+    left: 14px;
+    width: 250px;
+    height: 250px;
+    background: rgba(101, 101, 101, 0.6);
+    color: #ffffff;
+    opacity: 0;
+}
+.mask:hover {
+    opacity: 1;
+}
+
+#uploadAvatar{
+    position: fixed;
+    margin-top: 110px;
+    margin-left: 85px;
+}

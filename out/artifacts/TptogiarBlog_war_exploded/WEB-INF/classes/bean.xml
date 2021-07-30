@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--记录JavaBean的全类名，以便用反射构造出其实例-->
+<beans>
+    <bean classPath="dao.impl.UserDaoImpl"/>
+    <bean classPath="dao.impl.ReplyDaoImpl"/>
+    <bean classPath="service.UserServiceImpl"/>
+
+
+</beans>

@@ -1,0 +1,43 @@
+#username{
+    font-size: 12px;
+    white-space: nowrap;
+    background-color: rgb(247, 247, 249);
+}
+
+#essayProfileTemplate{
+    background-color: #ffffff;
+    margin-bottom: 4%;
+}
+
+
+#userAvatar{
+    height: 35px;
+    width: 35px;
+}
+
+
+#essaySummary{
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    display: -webkit-box;
+    font-size: 15px;
+}
+
+
+#essayImg{
+    height: 135px;
+    width: 135px;
+    margin-top: 0px;
+}
+
+#essayAuthor{
+    margin-left: -25px;
+    margin-top: 7px;
+    font-size: 15px;
+}
+
+
+#errorMsg{
+    font-size: 20px;
+}
