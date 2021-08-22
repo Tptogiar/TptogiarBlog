@@ -44,7 +44,8 @@
 
                 
 ### 	3.  个人信息
-      ![image-20210822160821306](https://user-images.githubusercontent.com/79641956/130355309-c157a6c4-f90e-44f9-bfdc-577cb67a0d9b.png)
+![image-20210822160821306](https://user-images.githubusercontent.com/79641956/130355412-2278a97e-0e35-4240-b885-788e104efe1f.png)
+
 ![image-20210822160844466](https://user-images.githubusercontent.com/79641956/130355312-c0bf2197-d9db-40f7-b089-608454ded214.png)
 
 ######        3.1 修改头像
