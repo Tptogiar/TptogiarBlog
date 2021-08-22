@@ -1,5 +1,8 @@
 package filter;
 
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import utils.CookiesUtils;
@@ -11,6 +14,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import java.util.List;
 
 
 /**
@@ -30,10 +34,11 @@ public class LoginFilter implements Filter {
     }
 
     @Override
-    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) {
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         try {
             HttpServletRequest req = (HttpServletRequest) request;
             logger.info("LoginFilter拦截到"+req.getRequestURL());
+
             String servletPath = req.getServletPath();
             if ("/visitor".equals(servletPath)){
                 chain.doFilter(request,response);

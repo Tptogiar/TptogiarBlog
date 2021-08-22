@@ -3,6 +3,7 @@ package service.impl;
 import dao.UserDao;
 import dao.impl.UserDaoImpl;
 import factory.BeanFactory;
+import org.apache.commons.codec.digest.DigestUtils;
 import pojo.User;
 import service.UserService;
 
@@ -19,7 +20,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User login(User user){
-        user.setPassword(user.getPassword());
+        String password=user.getPassword();
+        String md5Psw=DigestUtils.md5Hex(password);
+        user.setPassword(md5Psw);
         return userDao.queryForOne(user);
     }
 
@@ -27,7 +30,8 @@ public class UserServiceImpl implements UserService {
     public User regist(String username, String password, String email, Integer gender){
         User user = new User();
         user.setUsername(username);
-        user.setPassword(password);
+        String md5Psw=DigestUtils.md5Hex(password);
+        user.setPassword(md5Psw);
         user.setEmail(email);
         user.setGender(gender);
         int insertId = userDao.insertOne(user);
@@ -39,20 +43,27 @@ public class UserServiceImpl implements UserService {
         }
     }
 
-    /**
-     * 查询单个用户的信息
-     * @param user
-     * @return
-     */
+
     @Override
     public User queryOne(User user){
         return userDao.queryForOne(user);
     }
 
+
     @Override
     public int updateOne(User user){
+        String password = user.getPassword();
+        if (password!=null && password!=""){
+            user.setPassword(password);
+            userDao.updatePassword(user);
+        }
         return userDao.updateOne(user);
     }
 
+
+    @Override
+    public int updatePassword(User user){
+        return userDao.updatePassword(user);
+    }
 
 }

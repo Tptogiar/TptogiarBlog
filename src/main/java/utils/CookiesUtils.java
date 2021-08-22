@@ -12,6 +12,12 @@ import javax.servlet.http.Cookie;
 public class CookiesUtils {
 
 
+    /**
+     * 获取指定的cookie
+     * @param key
+     * @param cookies
+     * @return
+     */
     public static Cookie getCookie(String key, Cookie[] cookies) {
         for (Cookie cookie : cookies) {
             String name = cookie.getName();

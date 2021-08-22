@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文章修改</title>
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        .one {
+            line-height: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" style="height: 100%;padding:2% 0% 2%;">
+        <div class="container jumbotron" style="height: 100%; ">
+            <div class="input-group input-group-lg">
+                <span class="input-group-addon" id="basic-addon3">&nbsp;&nbsp;标题&nbsp;&nbsp;</span>
+                <input type="text" class="form-control" id="title" aria-describedby="basic-addon3">
+            </div>
+            <label> </label>
+            <div class="input-group" style="width: 100%">
+                    <span class="input-group-addon" style="line-height: 4px; ">
+                        <div class="one">摘</div>
+                    <div class="one">要</div></span>
+                <textarea id="summary" rows="3" cols="10" style="width: 100%;max-width: 100%;resize: vertical"></textarea>
+            </div>
+            <label> </label>
+            <div class="input-group" style="width: 100%">
+                    <span class="input-group-addon" style="line-height: 4px; ">
+                        <div class="one">正</div>
+                    <div class="one">文</div></span>
+                <textarea id="content" rows="20" cols="10" style="width: 100%;max-width: 100%;resize: vertical"></textarea>
+            </div>
+            <hr>
+            <div class="alert alert-danger" role="alert" id="errorMsg" style="display: none"></div>
+            <span class="" style="float: right">
+                    <button id="edit" type="button" class="btn btn-primary" data-toggle="modal" data-target="#issueMsgModal">完成修改</button>
+                </span>
+
+        </div>
+    </div>
+    <div class="modal fade" id="issueMsgModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">消息</h5>
+                </div>
+                <div class="modal-body" >
+                    <p id="issueMsgText"></p>
+                </div>
+                <div class="modal-footer">
+                    <button id="confirm" type="button" class="btn btn-info" data-dismiss="modal">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/edit.js"></script>
+</body>
+</html>

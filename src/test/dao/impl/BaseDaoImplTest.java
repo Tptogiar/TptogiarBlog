@@ -2,7 +2,10 @@ package dao.impl;
 
 import dao.UserDao;
 import org.junit.Test;
+import pojo.Essay;
 import pojo.User;
+
+import java.sql.SQLException;
 
 import static org.junit.Assert.*;
 
@@ -44,5 +47,20 @@ public class BaseDaoImplTest {
 
     @Test
     public void queryForList() {
+    }
+
+
+    @Test
+    public void batch() {
+        EssayDaoImpl essayDao=new EssayDaoImpl();
+        String sql="update t_essay set  browse_count = ?  where essay_id = ?";
+        Object[] values=new Object[]{"11","111","1111"};
+        Object[] ids=new Object[]{"18","19","20"};
+
+        try {
+            essayDao.batch(sql,values,ids);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
 }

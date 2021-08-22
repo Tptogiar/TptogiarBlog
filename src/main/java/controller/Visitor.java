@@ -21,31 +21,71 @@ public class Visitor extends BaseController{
     Logger logger = LoggerFactory.getLogger(Visitor.class);
 
 
+    /**
+     * 获取文章简介
+     * @param req
+     * @param resp
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void queryEssayProfiles(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        logger.info("获取文章简介");
         req.getRequestDispatcher("/essay?action=queryEssayProfiles").forward(req,resp);
     }
 
+    /**
+     *登录
+     * @param req
+     * @param resp
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void login(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        logger.info("登录");
         req.getRequestDispatcher("/user?action=login").forward(req,resp);
     }
 
+    /**
+     *注册
+     * @param req
+     * @param resp
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void regist(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        logger.info("注册");
         req.getRequestDispatcher("/user?action=regist").forward(req,resp);
     }
 
+    /**
+     *检查用户名
+     * @param req
+     * @param resp
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void checkUsername(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        logger.info("检查用户名");
         req.getRequestDispatcher("/user?action=checkUsername").forward(req,resp);
     }
 
+    /**
+     *检查电子邮箱
+     * @param req
+     * @param resp
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void checkEmail(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        logger.info("检查电子邮箱");
         req.getRequestDispatcher("/user?action=checkEmail").forward(req,resp);
     }
 
+    /**
+     *获取文章
+     * @param req
+     * @param resp
+     * @throws ServletException
+     * @throws IOException
+     */
+    protected void wholeEssay(HttpServletRequest req,HttpServletResponse resp) throws ServletException,IOException{
+        req.getRequestDispatcher("//essay?action=wholeEssay").forward(req,resp);
+    }
 
 
 }

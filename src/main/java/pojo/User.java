@@ -13,15 +13,14 @@ public class User {
 
     @DbField(fieldName = "id",isInsert = false,isUpdate = false,isQuery = true)
     private Integer id;
-    @DbField(fieldName = "username",isInsert = true,isUpdate=true,isQuery = true)
+    @DbField(fieldName = "username",isInsert = true,isUpdate=false,isQuery = true)
     private String username="";
-    @DbField(fieldName = "password",isInsert = true,isUpdate=true,isQuery = false)
+    @DbField(fieldName = "password",isInsert = true,isUpdate=false,isQuery = false)
     private String password="";
     @DbField(fieldName = "email",isInsert = true,isUpdate=true,isQuery = true)
     private String email="";
     @DbField(fieldName = "avatar_path",isInsert = true,isUpdate=true,isQuery = true)
-    //TODO 添加默认图片
-    private String avatarPath="image/avatar/default.png";
+    private String avatarPath="/image/avatar/default.png";
     @DbField(fieldName = "description",isInsert = true,isUpdate=true,isQuery = true)
     private String description="这家伙很懒，什么都没留下";
     @DbField(fieldName = "gender",isInsert = true,isUpdate=true,isQuery = true)

@@ -73,20 +73,27 @@ public abstract class BaseDaoImpl<E> implements BaseDao<E>{
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+
+
         return 0;
     }
 
     @Override
     public int updateOne(E object) {
-        QueryRunner queryRunner = new QueryRunner(JdbcUtils.getDataSource());
         HashMap<String,Object> dbFieldMap=new HashMap<>(8);
         ArrayList<Object> values = new ArrayList<>();
         String baseSql="update {0} set {1} where {2}";
         String updateSql= DBsqlUtils.getDbFieldSqlForUpdate(object,dbFieldMap);
         String conditionSql = getQueryCondition(object, values);
         String sql = MessageFormat.format(baseSql, getTableName(),updateSql,conditionSql);
+        return updateOne(object,sql,values.toArray());
+    }
+
+    @Override
+    public int updateOne(E object, String sql, Object... objects){
+        QueryRunner queryRunner = new QueryRunner(JdbcUtils.getDataSource());
         try {
-            return queryRunner.update(sql,values.toArray());
+            return queryRunner.update(sql,objects);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -114,6 +121,7 @@ public abstract class BaseDaoImpl<E> implements BaseDao<E>{
         return object;
     }
 
+
     @Override
     public List<E> queryForList(E object) {
         QueryRunner queryRunner = new QueryRunner(JdbcUtils.getDataSource());
@@ -123,17 +131,9 @@ public abstract class BaseDaoImpl<E> implements BaseDao<E>{
         String infoSql=DBsqlUtils.getDbFieldSqlForQuery(object,dbFieldMap);
         String conditionSql = getQueryCondition(object, values);
         String sql = MessageFormat.format(baseSql,infoSql,getTableName(),conditionSql);
-        try {
-            List<Map<String, Object>> query = queryRunner.query(sql, new MapListHandler());
-            if(query==null){
-                return null;
-            }
-            return  ReflectUtils.addFieldToBeans(query, object);
-        } catch (SQLException | IllegalAccessException | InstantiationException throwables) {
-            throwables.printStackTrace();
-        }
-        return null;
+        return queryForList(object,sql);
     }
+
 
     @Override
     public List<E> queryForList(E object,String sql,Object...objects) {
@@ -151,6 +151,7 @@ public abstract class BaseDaoImpl<E> implements BaseDao<E>{
     }
 
 
+
     @Override
     public Object queryForSingleValue(String sql, Object... args){
         QueryRunner queryRunner = new QueryRunner(JdbcUtils.getDataSource());
@@ -161,5 +162,19 @@ public abstract class BaseDaoImpl<E> implements BaseDao<E>{
         }
         return null;
     }
+
+
+    @Override
+    public int batch(String sql,Object[]...values) throws SQLException {
+        QueryRunner qr = new QueryRunner(JdbcUtils.getDataSource());
+        Object[][] params = new Object[values[0].length][values.length];
+        for (int i = 0; i < params.length; i++) {
+            for (int j = 0; j < values.length; j++) {
+                params[i][j] = values[j][i];
+            }
+        }
+        return qr.batch(sql, params).length;
+    }
+
 
 }

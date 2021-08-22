@@ -1,10 +1,55 @@
-$("#issue").click(function () {
-    var title=$("#title").val();
-    var content=$("#content").val();
-    var summary=$("#summary").val();
-    var $issue=$("#issue");
+var $title=$("#title")
+var $content=$("#content");
+var $summary=$("#summary");
 
-    if (title.length<2 || title.length>30){
+
+var essayId=getUrlParam("essayId");
+if(essayId!=null){
+    $.ajax({
+        type:"post",
+        dataType: "json",
+        data:{essayId:essayId},
+        url: "/TptogiarBlog/essay?action=wholeEssay",
+        success:function (revr) {
+            if (revr.resultCode==="200"){
+                initEssay(revr.essay)
+            }else{
+                $("#modalContent").text("获取文章失败");
+                $('#msgModal').modal('show');
+            }
+        }
+    });
+};
+
+
+function initEssay(essay){
+    $title.val(essay.title);
+    $summary.text(essay.summary);
+    $content.text(essay.content);
+}
+
+
+function getUrlParam(name) {
+    let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    let r = window.location.search.substr(1).match(reg);
+    if (r != null) {
+        return decodeURIComponent(r[2]);
+    };
+    return null;
+}
+
+$("#confirm").click(function () {
+    window.location="/TptogiarBlog";
+});
+
+
+$("#edit").click(function () {
+    var title=$title.val();
+    var content=$content.val();
+    var summary=$summary.val();
+
+
+    if (title.length<2 || title.length>50){
         alert("标题长度必须大于等于2,且不能大于30");
         return false;
     }
@@ -20,23 +65,21 @@ $("#issue").click(function () {
         alert("暂不支持长篇大论");
         return false;
     }
-    if (summary===""){
-        summary=content.substring(0,150);
-    }
     sendData={title:title,
-            content:content,
-            summary:summary};
+        content:content,
+        summary:summary,
+        essayId:essayId};
     $.ajax({
         type:"post",
-        url:"/TptogiarBlog/essay?action=issue",
+        url:"/TptogiarBlog/essay?action=edit",
         data:sendData,
         success:function (recData) {
             if (recData.resultCode==="200"){
                 $("#errorMsg").hide();
                 $('#issueMsgModal').modal('show');
-                $("#issueMsgText").text("文章    ⌊ "+title+"  ⌉    发布成功");
+                $("#issueMsgText").text("文章    ⌊ "+title+"  ⌉    修改成功");
             }else{
-                $("#errorMsg").text("文章发布失败 "+recData.msg+" ");
+                $("#errorMsg").text("文章修改失败 "+recData.msg+" ");
                 $("#errorMsg").show();
             }
         },
@@ -45,7 +88,6 @@ $("#issue").click(function () {
     return false;
 });
 
-
-$("#confirm").click(function () {
+$("#cancle").click(function () {
     window.location="/TptogiarBlog";
 });

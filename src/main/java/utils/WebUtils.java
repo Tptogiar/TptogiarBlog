@@ -2,6 +2,10 @@ package utils;
 
 import com.google.gson.Gson;
 import dto.ResultCode;
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.FileUploadException;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pojo.User;
@@ -10,10 +14,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.regex.Pattern;
-
 import static com.google.code.kaptcha.Constants.KAPTCHA_SESSION_KEY;
-import static javafx.scene.input.KeyCode.Z;
 
 /**
  * @author Tptogiar
@@ -22,9 +25,12 @@ import static javafx.scene.input.KeyCode.Z;
  */
 
 
+
+
+
 public class WebUtils {
 
-    private Logger logger = LoggerFactory.getLogger(WebUtils.class);
+    private static Logger logger = LoggerFactory.getLogger(WebUtils.class);
     public static Gson gson=new Gson();
     public static HashMap<String , Object> resultMap = new HashMap<>();
 
@@ -121,10 +127,16 @@ public class WebUtils {
      * @param resultMap
      * @throws IOException
      */
-    public static void replyForData(HttpServletResponse resp,HashMap<String , Object> resultMap) throws IOException {
+    public static void replyForData(HttpServletResponse resp,HashMap<String , Object> resultMap)  {
         resultMap.put("resultCode",ResultCode.SUCCEED.code);
         String json = gson.toJson(resultMap);
-        resp.getWriter().write(json);
+        try {
+            resp.getWriter().write(json);
+        } catch (IOException e) {
+            e.printStackTrace();
+            logger.info("数据回写失败");
+            throw new RuntimeException(e);
+        }
     }
 
 
@@ -155,12 +167,9 @@ public class WebUtils {
      * @return
      */
     public static boolean checkEssayDataToIssue(String title, StringBuilder summary, String content, Integer userId, StringBuilder unkonw) {
-        if (title.length()<2 || null==content ||"".equals(content) || title.length()>30){
+        if (title.length()<2 || null==content ||"".equals(content) || title.length()>50){
             unkonw.append("内容有误");
             return false;
-        }
-        if ("".equals(summary.toString())){
-            summary.append(content.substring(0,150));
         }
         if (content.length()>50000){
             unkonw.append("暂不支持长篇大论");
@@ -208,5 +217,27 @@ public class WebUtils {
         user.setPassword(password);
         return user;
     }
+
+    /**
+     * 从请求头中获取文件
+     * @param req
+     * @return
+     * @throws FileUploadException
+     */
+    public static FileItem getUploadFileItem(HttpServletRequest req) {
+        DiskFileItemFactory diskFileItemFactory = new DiskFileItemFactory();
+        ServletFileUpload servletFileUpload = new ServletFileUpload(diskFileItemFactory);
+        List<FileItem> fileItems = null;
+        try {
+            fileItems = servletFileUpload.parseRequest(req);
+        } catch (FileUploadException e) {
+            e.printStackTrace();
+            logger.info("未能从请求头中获取头像");
+            throw new RuntimeException(e);
+        }
+        FileItem fileItem = fileItems.get(0);
+        return fileItem;
+    }
+
 
 }

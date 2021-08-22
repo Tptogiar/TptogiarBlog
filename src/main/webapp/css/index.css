@@ -4,11 +4,14 @@
     background-color: rgb(247, 247, 249);
 }
 
-#essayProfileTemplate{
+.essayProfile{
     background-color: #ffffff;
     margin-bottom: 4%;
 }
 
+p {
+    text-indent: 2em;
+}
 
 #userAvatar{
     height: 35px;

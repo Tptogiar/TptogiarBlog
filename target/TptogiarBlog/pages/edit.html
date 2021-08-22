@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>编辑文章</title>
-    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <script src="../js/jquery.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
+    <title>文章修改</title>
+    <link href="../css/lib/bootstrap.css" rel="stylesheet">
+    <script src="../js/lib/jquery.js"></script>
+    <script src="../js/lib/bootstrap.min.js"></script>
     <style>
         .one {
             line-height: 24px;
@@ -21,23 +21,24 @@
             </div>
             <label> </label>
             <div class="input-group" style="width: 100%">
-                <span class="input-group-addon" style="line-height: 4px; ">
-                    <div class="one">摘</div>
-                <div class="one">要</div></span>
+                    <span class="input-group-addon" style="line-height: 4px; ">
+                        <div class="one">摘</div>
+                    <div class="one">要</div></span>
                 <textarea id="summary" rows="3" cols="10" style="width: 100%;max-width: 100%;resize: vertical"></textarea>
             </div>
             <label> </label>
             <div class="input-group" style="width: 100%">
-                <span class="input-group-addon" style="line-height: 4px; ">
-                    <div class="one">正</div>
-                <div class="one">文</div></span>
+                    <span class="input-group-addon" style="line-height: 4px; ">
+                        <div class="one">正</div>
+                    <div class="one">文</div></span>
                 <textarea id="content" rows="20" cols="10" style="width: 100%;max-width: 100%;resize: vertical"></textarea>
             </div>
             <hr>
             <div class="alert alert-danger" role="alert" id="errorMsg" style="display: none"></div>
             <span class="" style="float: right">
-                <button id="issue" type="button" class="btn btn-primary" data-toggle="modal" data-target="#issueMsgModal">发布</button>
-            </span>
+                    <button id="cancle"  class="btn btn-secondary" >取消</button>
+                    <button id="edit" type="button" class="btn btn-primary" data-toggle="modal" data-target="#issueMsgModal">完成修改</button>
+                </span>
 
         </div>
     </div>
@@ -48,9 +49,10 @@
                     <h5 class="modal-title" id="staticBackdropLabel">消息</h5>
                 </div>
                 <div class="modal-body" >
-                <p id="issueMsgText"></p>
+                    <p id="issueMsgText"></p>
                 </div>
                 <div class="modal-footer">
+
                     <button id="confirm" type="button" class="btn btn-info" data-dismiss="modal">确定</button>
                 </div>
             </div>

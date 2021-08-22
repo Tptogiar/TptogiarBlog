@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property name="pattern" value="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} %c %M %L [%thread] %m%n"/>
+    <property name="logDir" value="../logs"/>
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <target>System.err</target>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>${pattern}</pattern>
+        </encoder>
+    </appender>
+    <appender name="file" class="ch.qos.logback.core.FileAppender">
+        <file>${logDir}/TptogiarBlog.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>${pattern}</pattern>
+        </encoder>
+    </appender>
+    <root level="all">
+        <appender-ref ref="file"/>
+        <appender-ref ref="async"/>
+    </root>
+</configuration>

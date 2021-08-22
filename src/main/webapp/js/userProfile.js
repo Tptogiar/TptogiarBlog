@@ -1,6 +1,7 @@
 var user =  $.cookie("username");
 var userId=$.cookie("userId");
 $("#username").text(user);
+var lastDescription;
 
 //获取用户信息
 $.ajax({
@@ -39,7 +40,9 @@ var $passwordCorrect=$("#passwordCorrect");
 var $passwordCorrectAgain=$("#passwordCorrectAgain");
 var $passwordCorrectAgainItem=$("#passwordCorrectAgainItem");
 var $cancelSubmit=$("#cancelSubmit");
+var $userAvatar=$("#userAvatarDisplay");
 
+//初始化用户信息
 function initUserInfo(user) {
     $username.val(user.username);
     if (user.gender===1){
@@ -51,18 +54,19 @@ function initUserInfo(user) {
     }
     $email.val(user.email);
     $description.val(user.description);
+    $userAvatar.attr("src","/TptogiarBlog/"+user.avatarPath);
+    $("#userAvatarLogo").attr("src","/TptogiarBlog/"+user.avatarPath);
 }
 
 
 
 $("#correct").click(function () {
+    lastDescription=$description.val();
     $(this).hide();
     $("#submit").show();
     $cancelSubmit.show();
     $description.removeAttr("readonly");
     $passwordCorrect.removeAttr("readonly");
-    $passwordCorrect.val("");
-    $passwordCorrectAgain.val("");
     $passwordCorrectAgain.removeAttr("readonly");
     $passwordCorrectAgainItem.show();
 });
@@ -71,15 +75,23 @@ $cancelSubmit.click(function () {
     $(this).hide();
     $("#submit").hide();
     $passwordCorrect.val("******");
+    $passwordCorrectAgain.val("******");
     $("#correct").show();
     $description.attr("readOnly","true");
     $passwordCorrect.attr("readOnly","true");
     $passwordCorrectAgainItem.hide();
+    $description.val(lastDescription);
 });
 
 
 //修改个人信息
 $("#submit").click(function () {
+    var curDescription=$description.val();
+    if (curDescription.length>=150){
+        $("#modalContent").text("个人简介长度不能超过150");
+        $('#msgModal').modal('show');
+        return;
+    }
     var password=$passwordCorrect.val();
     var passwordAgain=$passwordCorrectAgain.val();
     if (password!=passwordAgain){
@@ -93,23 +105,25 @@ $("#submit").click(function () {
         return;
     }
     var passwordPatt=/^[a-zA-Z]\w{5,17}$/;
-    if (!passwordPatt.test(password)){
+    if (password!=="******"&& !passwordPatt.test(password)){
         $("#modalContent").text("密码以字母开头，长度在6~18之间，且只能包含字母、数字和下划线");
         $('#msgModal').modal('show');
         return ;
     }
-    var curDescription=$description.val();
-    if (curDescription.length>=150){
-        $("#modalContent").text("个人简介长度不能超过150");
-        $('#msgModal').modal('show');
-        return;
+    lastDescription=curDescription;
+    var sendData;
+    if (password==="******"){
+        sendData={userId:userId,
+            description:curDescription};
+    }else{
+        sendData={userId:userId,
+            password:password,
+            description:curDescription}
     }
     $.ajax({
         url:"/TptogiarBlog/user?action=correctInfo",
         type:"post",
-        data:{userId:userId,
-            password:password,
-            description:curDescription},
+        data:sendData,
         dataType:"json",
         success:function (revr) {
             if (revr.resultCode==="200"){
@@ -128,7 +142,26 @@ $("#submit").click(function () {
 });
 
 
-
-$("#uploadAvatar").click(function () {
-
-});
+$("#userAvatar").fileupload({
+    url: "/TptogiarBlog/image?action=updateAvatar",
+    dataType: 'json',
+    formData: {},
+    add: function (e, data) {
+        var uploadErrors = [];
+        var fileTypePatt = /^image\/(|jpe?g|png)$/i;
+        if(data.originalFiles[0].type.length && !fileTypePatt.test(data.originalFiles[0].type)) {
+            uploadErrors.push('请上传jpg、jpeg或png格式的文件');
+        }
+        if(data.originalFiles[0].size > (3*1024*1024)) {
+            uploadErrors.push('请上传不超过3MB的文件');
+        }
+        if(uploadErrors.length > 0) {
+            alert(uploadErrors.join("\n"));
+        } else {
+            data.submit();
+        }
+    },
+    done: function (e, data) {
+        window.location="/TptogiarBlog/pages/userProfile.html";
+    },
+})

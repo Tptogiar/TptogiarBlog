@@ -16,8 +16,8 @@
     opacity: 1;
 }
 
-#uploadAvatar{
-    position: fixed;
+#userAvatar{
     margin-top: 110px;
-    margin-left: 85px;
+    margin-left: 40px;
+    width: 175px;
 }

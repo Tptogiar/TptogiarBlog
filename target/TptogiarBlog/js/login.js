@@ -21,7 +21,7 @@ $("#login").click(function () {
     //检查用户密码
     var passwordPatt=/^\w{5,12}$/;
     if (!passwordPatt.test(password)){
-        alert("密码长度必须在5~12之间");
+        alert("密码长度必须在5~12之间,且只能包含字母，数字和下划线");
         return ;
     }
     if(code==="" || code.length<=4){

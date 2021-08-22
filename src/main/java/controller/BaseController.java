@@ -1,6 +1,10 @@
 package controller;
 
 
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.FileUploadException;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.lang.reflect.Method;
+import java.util.List;
 
 /**
  * @author Tptogiar
@@ -21,7 +26,7 @@ import java.lang.reflect.Method;
 @MultipartConfig
 public class BaseController extends HttpServlet {
     Logger logger = LoggerFactory.getLogger(BaseController.class);
-    public static String beanRealPath=null;
+
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -30,9 +35,11 @@ public class BaseController extends HttpServlet {
     }
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
+
         String action = req.getParameter("action");
         logger.info("BaseController接收到请求，action : "+action);
         resp.setContentType("text/html;charset=UTF-8");
+
         try {
             Method method = this.getClass().getDeclaredMethod(action, HttpServletRequest.class, HttpServletResponse.class);
             method.invoke(this,req,resp);

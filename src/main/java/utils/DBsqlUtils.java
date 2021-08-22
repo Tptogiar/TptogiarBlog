@@ -89,7 +89,11 @@ public class DBsqlUtils {
     }
 
 
-
+    /**
+     * 添加占位符“？”
+     * @param sqlBuilder
+     * @param size
+     */
     public static void addPlaceholder(StringBuilder sqlBuilder, int size) {
         if (size>=1){
             sqlBuilder.append("?");

@@ -1,0 +1,16 @@
+.list-group-item{
+    margin-bottom: 2%;
+}
+
+.editBtn,.removeBtn{
+    opacity: 0;
+}
+
+.editBtn:hover,.removeBtn:hover{
+    cursor:pointer;
+    opacity: 1;
+}
+
+.moreInfo{
+    margin-left: 3%;
+}

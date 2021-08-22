@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <title>个人中心</title>
     <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <script src="../js/jquery.js"></script>
-    <script src="../js/jquery.cookie.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/lib/jquery.js"></script>
+    <script src="../js/lib/jquery.cookie.js"></script>
+    <script src="../js/lib/bootstrap.min.js"></script>
+    <script src="../js/lib/jquery.ui.widget.js"></script>
+    <script src="../js/lib/jquery.fileupload.js"></script>
     <link rel="stylesheet" href="../css/userProfile.css">
 
 </head>
@@ -21,11 +23,11 @@
                         <div class="col-md-2 column ">
                         </div>
                         <div class="col-md-8 column " style="padding: 0px;">
-                            <img alt="140x140 " src="../img.png " class="img-circle .center-block " style="height: 90px; " />
+                            <img alt="140x140 " src="../image/logo.png" class="img-circle .center-block " style="height: 90px; " />
                         </div>
                         <div class="col-md-2 column ">
                         </div>
-                        <h3>Tptogiar</h3>
+                        <h3 align="center">Tptogiar</h3>
                     </div>
                 </div>
                 <!--选项-->
@@ -39,7 +41,7 @@
                     <a  href="/TptogiarBlog/pages/edit.html" class="list-group-item " id="issue">
                         <span class="glyphicon glyphicon-pencil " style="color: blue;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;写文章
                     </a>
-                    <a href="#" class="list-group-item">
+                    <a href="#" class="list-group-item" id="essayManager">
                         <span class="glyphicon glyphicon-align-justify" style="color: blue;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;文章管理
                     </a>
                     <a href="#" class="list-group-item">
@@ -49,17 +51,23 @@
                         <span class="glyphicon glyphicon-comment" style="color: blue;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;消息
                     </a>
                 </div>
+
                 <!--用户-->
                 <div class="list-group">
                     <a href="/TptogiarBlog" class="list-group-item ">
                         <span class="glyphicon glyphicon-home "></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home
                     </a>
                     <a href="#" class="list-group-item" id="usernameItem">
-                        <img src="../img.png" class="img-circle" alt="头像" style="height: 30px;margin: -5px;margin-left: -8px;">
+                        <img id="userAvatarLogo" src="/TptogiarBlog/image/avatar/default.png" class="img-circle" alt="头像" style="height: 30px;margin: -5px;margin-left: -8px;">
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <strong><font color="#dd1144" face="Monaco, Menlo, Consolas">
                             <span  id="username"></span>
                         </font></strong>
+                    </a>
+                    <a href="#" class="list-group-item border border-primary" id="userOptionItem" style="display: none">
+                        <span class="glyphicon glyphicon-menu-right"></span> &nbsp;&nbsp;
+                        <button type="button" class="btn btn-light btn-xs" id="profile">个人中心</button>
+                        <button type="button" class="btn btn-light btn-xs" id="logout">登出</button>
                     </a>
                 </div>
             </div>
@@ -69,9 +77,9 @@
                 <div class="row-fluid">
                     <!--头像-->
                     <div class="col-md-5 column">
-                        <img id="userAvatarDisplay" src="../img.png" class="img-circle" >
+                        <img id="userAvatarDisplay" src="/TptogiarBlog/image/avatar/default.png" class="img-circle" >
                         <span class="mask img-circle">
-                            <button id="uploadAvatar" class="btn btn-info"  style="">上传文件</button>
+                        <input  id="userAvatar" type="file" class="btn btn-primary">
                         </span>
                     </div>
                     <!--其他信息-->
@@ -124,7 +132,7 @@
                                 <td>
                                     <div class="input-group input-group-default">
                                         <span class="input-group-addon" >确认密码</span>
-                                        <input id="passwordCorrectAgain" type="password" class="form-control"  readonly >
+                                        <input id="passwordCorrectAgain" type="password" class="form-control"  readonly value="******">
                                     </div>
                                     <label></label>
                                 </td>
@@ -171,5 +179,6 @@
     </div>
 
     <script src="../js/userProfile.js"></script>
+    <script src="../js/pages_common.js"></script>
 </body>
 </html>

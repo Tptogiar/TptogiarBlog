@@ -10,4 +10,12 @@ import pojo.User;
 
 
 public interface UserDao extends BaseDao<User>{
+
+
+    /**
+     * 更新密码
+     * @param user
+     * @return
+     */
+    int updatePassword(User user);
 }

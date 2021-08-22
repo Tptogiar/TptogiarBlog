@@ -1,6 +1,7 @@
 package pojo;
 
 import annotation.DbField;
+import annotation.IndirectDbField;
 
 import java.time.LocalDateTime;
 
@@ -13,35 +14,38 @@ import java.time.LocalDateTime;
 
 public class Essay {
 
-    @DbField(fieldName = "essay_id", isInsert = false, isUpdate = false)
-    private Integer id;
-    @DbField(fieldName = "title", isInsert = true, isUpdate = true)
+    @DbField(fieldName = "essay_id", isInsert = false, isUpdate = false,isQuery = true)
+    private Integer essayId;
+    @DbField(fieldName = "title", isInsert = true, isUpdate = true,isQuery = true)
     private String title;
-    @DbField(fieldName = "summary",isInsert = true,isUpdate = true)
+    @DbField(fieldName = "summary",isInsert = true,isUpdate = true,isQuery = true)
     private String summary;
-    @DbField(fieldName = "content", isInsert = true, isUpdate = true)
+    @DbField(fieldName = "content", isInsert = true, isUpdate = true,isQuery = true)
     private String content;
-    @DbField(fieldName = "author_id", isInsert = true, isUpdate = false)
+    @DbField(fieldName = "author_id", isInsert = true, isUpdate = false,isQuery = true)
     private Integer authorId;
-    @DbField(fieldName = "author_username", isInsert = true, isUpdate = false)
-    private String authorUsername;
-    @DbField(fieldName = "publish_time", isInsert = true, isUpdate = false)
+    @DbField(fieldName = "publish_time", isInsert = true, isUpdate = false,isQuery = true)
     private LocalDateTime publishTime;
-    @DbField(fieldName = "last_time", isInsert = true, isUpdate = true)
+    @DbField(fieldName = "last_time", isInsert = true, isUpdate = true,isQuery = true)
     private LocalDateTime lastTime;
-    @DbField(fieldName = "browse_count", isInsert = true, isUpdate = true)
+    @DbField(fieldName = "browse_count", isInsert = true, isUpdate = true,isQuery = true)
     private Integer browsedCount =0;
-    @DbField(fieldName = "like_count", isInsert = true, isUpdate = true)
+    @DbField(fieldName = "like_count", isInsert = true, isUpdate = true,isQuery = true)
     private Integer likedCount =0;
-    @DbField(fieldName = "column_id", isInsert = true, isUpdate = true)
+    @DbField(fieldName = "column_id", isInsert = true, isUpdate = false,isQuery = true)
     private Integer columnId;
+    @IndirectDbField(fieldName = "username")
+    private String authorUsername;
+    @IndirectDbField(fieldName = "avatar_path")
+    private String authorAvatar;
+
 
 
     public Essay() {
     }
 
-    public Essay(Integer id, String title, String summary, String content, Integer authorId, LocalDateTime publishTime, LocalDateTime lastTime, Integer browseCount, Integer likedCount, Integer columnId) {
-        this.id = id;
+    public Essay(Integer essayId, String title, String summary, String content, Integer authorId, LocalDateTime publishTime, LocalDateTime lastTime, Integer browseCount, Integer likedCount, Integer columnId) {
+        this.essayId = essayId;
         this.title = title;
         this.summary = summary;
         this.content = content;
@@ -53,12 +57,12 @@ public class Essay {
         this.columnId = columnId;
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getEssayId() {
+        return essayId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setEssayId(Integer essayId) {
+        this.essayId = essayId;
     }
 
     public String getTitle() {
@@ -142,10 +146,19 @@ public class Essay {
         this.authorUsername = authorUsername;
     }
 
+
+    public String getAuthorAvatar() {
+        return authorAvatar;
+    }
+
+    public void setAuthorAvatar(String authorAvatar) {
+        this.authorAvatar = authorAvatar;
+    }
+
     @Override
     public String toString() {
         return "Essay{" +
-                "id=" + id +
+                "id=" + essayId +
                 ", title='" + title + '\'' +
                 ", authorId=" + authorId +
                 ", publishTime=" + publishTime +

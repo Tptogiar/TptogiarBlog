@@ -1,5 +1,6 @@
 package controller;
 
+import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
@@ -7,6 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 import factory.BeanFactory;
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.FileItemFactory;
+import org.apache.commons.fileupload.FileUploadException;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pojo.User;
@@ -14,8 +20,10 @@ import service.UserService;
 import service.impl.UserServiceImpl;
 import utils.WebUtils;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * @author Tptogiar
@@ -199,6 +207,12 @@ public class UserController extends BaseController{
         WebUtils.replyForData(resp,resultMap);
     }
 
+    /**
+     * 修改用户信息
+     * @param req
+     * @param resp
+     * @throws IOException
+     */
     protected void correctInfo(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String userId = req.getParameter("userId");
         String description = req.getParameter("description");
@@ -214,7 +228,7 @@ public class UserController extends BaseController{
             WebUtils.replyForFail(resp,"修改用户信息失败");
             return;
         }
-        if (!WebUtils.checkPassword(password)){
+        if (password!=null && !WebUtils.checkPassword(password)){
             WebUtils.replyForFail(resp,"修改用户信息失败,密码不合法");
             return;
         }

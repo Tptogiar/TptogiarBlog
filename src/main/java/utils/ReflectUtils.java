@@ -1,6 +1,7 @@
 package utils;
 
 import annotation.DbField;
+import annotation.IndirectDbField;
 import pojo.User;
 
 import java.lang.reflect.Field;
@@ -75,11 +76,17 @@ public class ReflectUtils {
                 clazz=clazz.getSuperclass();
             }
             for (Field field:fields) {
-                DbField annotation = field.getAnnotation(DbField.class);
-                if (annotation!=null && fieldValueMap.containsKey(annotation.fieldName())){
+                DbField dbFieldAnotation = field.getAnnotation(DbField.class);
+                IndirectDbField indirectDbFieldAnotation = field.getAnnotation(IndirectDbField.class);
+                //该属性是该类对应的表中的字段
+                if (dbFieldAnotation!=null && fieldValueMap.containsKey(dbFieldAnotation.fieldName())){
                     field.setAccessible(true);
-                    field.set(bean,fieldValueMap.get(annotation.fieldName()));
-
+                    field.set(bean,fieldValueMap.get(dbFieldAnotation.fieldName()));
+                }
+                //该属性不是该类对应的表中的字段，来自其他表
+                if (indirectDbFieldAnotation!=null && fieldValueMap.containsKey(indirectDbFieldAnotation.fieldName())){
+                    field.setAccessible(true);
+                    field.set(bean,fieldValueMap.get(indirectDbFieldAnotation.fieldName()));
                 }
             }
             return bean;

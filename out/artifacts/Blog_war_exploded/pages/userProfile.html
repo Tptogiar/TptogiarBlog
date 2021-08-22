@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人中心</title>
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="../js/jquery.js"></script>
+    <script src="../js/jquery.cookie.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.ui.widget.js"></script>
+    <script src="../js/jquery.fileupload.js"></script>
+    <link rel="stylesheet" href="../css/userProfile.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="row clearfix">
+            <!--  左边选项栏          -->
+            <div class="col-md-3 column" style="margin-top: 5%;">
+                <!--Logo-->
+                <div class="jumbotron ">
+                    <div class="row clearfix ">
+                        <div class="col-md-2 column ">
+                        </div>
+                        <div class="col-md-8 column " style="padding: 0px;">
+                            <img alt="140x140 " src="../image/logo.png" class="img-circle .center-block " style="height: 90px; " />
+                        </div>
+                        <div class="col-md-2 column ">
+                        </div>
+                        <h3 align="center">Tptogiar</h3>
+                    </div>
+                </div>
+                <!--选项-->
+                <div class="list-group">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="请输入查找内容">
+                        <span class="input-group-btn">
+                              <button class="btn btn-default" type="button">Go!</button>
+                            </span>
+                    </div>
+                    <a  href="/TptogiarBlog/pages/edit.html" class="list-group-item " id="issue">
+                        <span class="glyphicon glyphicon-pencil " style="color: blue;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;写文章
+                    </a>
+                    <a href="#" class="list-group-item" id="essayManager">
+                        <span class="glyphicon glyphicon-align-justify" style="color: blue;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;文章管理
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <span class="glyphicon glyphicon-star" style="color: blue;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;收藏
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <span class="glyphicon glyphicon-comment" style="color: blue;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;消息
+                    </a>
+                </div>
+
+                <!--用户-->
+                <div class="list-group">
+                    <a href="/TptogiarBlog" class="list-group-item ">
+                        <span class="glyphicon glyphicon-home "></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home
+                    </a>
+                    <a href="#" class="list-group-item" id="usernameItem">
+                        <img id="userAvatarLogo" src="/TptogiarBlog/image/avatar/default.png" class="img-circle" alt="头像" style="height: 30px;margin: -5px;margin-left: -8px;">
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <strong><font color="#dd1144" face="Monaco, Menlo, Consolas">
+                            <span  id="username"></span>
+                        </font></strong>
+                    </a>
+                    <a href="#" class="list-group-item border border-primary" id="userOptionItem" style="display: none">
+                        <span class="glyphicon glyphicon-menu-right"></span> &nbsp;&nbsp;
+                        <button type="button" class="btn btn-light btn-xs" id="profile">个人中心</button>
+                        <button type="button" class="btn btn-light btn-xs" id="logout">登出</button>
+                    </a>
+                </div>
+            </div>
+
+            <!--内容显示-->
+            <div class="col-md-9 column jumbotron " style="margin-top: 5%; ">
+                <div class="row-fluid">
+                    <!--头像-->
+                    <div class="col-md-5 column">
+                        <img id="userAvatarDisplay" src="/TptogiarBlog/image/avatar/default.png" class="img-circle" >
+                        <span class="mask img-circle">
+                        <input  id="userAvatar" type="file" class="btn btn-primary">
+                        </span>
+                    </div>
+                    <!--其他信息-->
+                    <div class="col-md-6 column">
+                        <table>
+                            <!--用户名-->
+                            <tr>
+                                <td>
+                                    <div class="input-group input-group-default">
+                                        <span class="input-group-addon" >用户名</span>
+                                        <input id="usernameDisplay" type="text" class="form-control"  readonly style="text-align: center">
+                                        <span class="input-group-addon" >性别</span>
+                                        <span  class="input-group-addon">
+                                            <svg id="gender_ambiguous" width="16" height="16" fill="gray">
+                                                <path fill-rule="evenodd" d="M11.5 1a.5.5 0 0 1 0-1h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V1.707l-3.45 3.45A4 4 0 0 1 8.5 10.97V13H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V14H6a.5.5 0 0 1 0-1h1.5v-2.03a4 4 0 1 1 3.471-6.648L14.293 1H11.5zm-.997 4.346a3 3 0 1 0-5.006 3.309 3 3 0 0 0 5.006-3.31z"/>
+                                            </svg>
+                                            <svg  id="gender_female" width="16" height="16" fill="#ff6b81" style="display: none">
+                                                <path fill-rule="evenodd" d="M8 1a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM3 5a5 5 0 1 1 5.5 4.975V12h2a.5.5 0 0 1 0 1h-2v2.5a.5.5 0 0 1-1 0V13h-2a.5.5 0 0 1 0-1h2V9.975A5 5 0 0 1 3 5z"/>
+                                            </svg>
+                                            <svg  id="gender_male" width="16" height="16" fill="#1e90ff" style="display: none">
+                                                <path fill-rule="evenodd" d="M9.5 2a.5.5 0 0 1 0-1h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V2.707L9.871 6.836a5 5 0 1 1-.707-.707L13.293 2H9.5zM6 6a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <label></label>
+                                </td>
+                            </tr>
+                            <!--邮箱-->
+                            <tr>
+                                <td>
+                                    <div class="input-group input-group-default">
+                                        <span class="input-group-addon" >邮箱</span>
+                                        <input id="emailDisplay" type="text" class="form-control"  readonly>
+                                    </div>
+                                    <label></label>
+                                </td>
+                            </tr>
+                            <!--密码-->
+                            <tr>
+                                <td>
+                                    <div class="input-group input-group-default">
+                                        <span class="input-group-addon" >密码</span>
+                                        <input id="passwordCorrect" type="password" class="form-control"  readonly value="******">
+                                    </div>
+                                    <label></label>
+                                </td>
+                            </tr>
+                            <!--确认密码-->
+                            <tr id="passwordCorrectAgainItem" style="display: none">
+                                <td>
+                                    <div class="input-group input-group-default">
+                                        <span class="input-group-addon" >确认密码</span>
+                                        <input id="passwordCorrectAgain" type="password" class="form-control"  readonly value="******">
+                                    </div>
+                                    <label></label>
+                                </td>
+                            </tr>
+                            <!--个人简介-->
+                            <tr>
+                                <td>
+                                    <div class="input-group input-group-default">
+                                        <span class="input-group-addon" >个人简介</span>
+                                        <textarea  id="descriptionDisplay" cols="30" rows="5" readonly class="form-control" style="resize:none"></textarea>
+                                    </div>
+                                    <label></label>
+                                </td>
+                            </tr>
+                            <!--提交/修改/取消修改-->
+                            <tr align="center">
+                                <td>
+                                    <button id="correct" class="btn btn-info">修改</button>
+                                    <button id="submit" class="btn btn-info" style="display: none">提交修改</button>
+                                    <button id="cancelSubmit" class="btn btn-info" style="display: none">取消修改</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="msgModal" >
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">消息</h5>
+                </div>
+                <div class="modal-body">
+                    <div id="modalContent"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/userProfile.js"></script>
+    <script src="../js/pages_common.js"></script>
+</body>
+</html>

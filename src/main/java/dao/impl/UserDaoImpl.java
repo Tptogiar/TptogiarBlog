@@ -3,6 +3,7 @@ package dao.impl;
 import dao.UserDao;
 import pojo.User;
 
+import java.text.MessageFormat;
 import java.util.ArrayList;
 
 /**
@@ -53,6 +54,13 @@ public class UserDaoImpl extends BaseDaoImpl<User> implements UserDao {
     }
 
 
+    @Override
+    public int updatePassword(User user) {
+        String baseSql="update {0} set password = ?  where id = ?";
+        String sql = MessageFormat.format(baseSql, getTableName());
+        updateOne(user,sql,user.getPassword(),user.getId());
+        return 0;
+    }
 
 
 }

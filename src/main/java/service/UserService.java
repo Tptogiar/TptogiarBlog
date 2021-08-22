@@ -11,7 +11,19 @@ public interface UserService {
 
     User regist(String username, String password, String email, Integer gender);
 
+    /**
+     * 查询单个用户的信息
+     * @param user
+     * @return
+     */
     User queryOne(User user);
 
     int updateOne(User user);
+
+    /**
+     * 更新密码
+     * @param user
+     * @return
+     */
+    int updatePassword(User user);
 }
