@@ -25,6 +25,7 @@
 ![image-20210822154909867](https://user-images.githubusercontent.com/79641956/130350495-fbdaf95c-bfa4-429d-8c9f-a27c13a9ff95.png)
 
 ![image-20210822154914812](https://user-images.githubusercontent.com/79641956/130350498-f596c401-c57c-4efd-ba74-660c74bb9d5b.png)
+![image-20210822154936731](https://user-images.githubusercontent.com/79641956/130355067-3b88adef-d833-4d21-a59d-1a9ea836c34b.png)
 
 #### 		2.2查看文章
 ![image-20210822155300207](https://user-images.githubusercontent.com/79641956/130350504-1085234b-1f46-434c-84ea-8bf639294890.png)
@@ -35,8 +36,8 @@
                 ![image-20210822165114226](https://user-images.githubusercontent.com/79641956/130350515-8d04a494-62cd-48e1-b861-72c084ecad3a.png)   
 ### 	3.  个人信息
       
-        3.1 修改头像
-        3.2 修改个人信息
+######        3.1 修改头像
+######        3.2 修改个人信息
 ### 	4.  登出
 
 
