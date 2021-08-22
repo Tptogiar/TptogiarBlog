@@ -113,6 +113,8 @@
 ![image](https://user-images.githubusercontent.com/79641956/130357157-663f82be-c4c0-499d-af03-55df18877b7d.png)
     
     
+    
+    
     2. 登录
       2.1 用户名或密码错误
 ![image](https://user-images.githubusercontent.com/79641956/130357195-98a65c38-2c7a-4f38-aab3-12e7e9e38725.png)
@@ -120,14 +122,23 @@
       2.2 验证码不正确
 ![image](https://user-images.githubusercontent.com/79641956/130357211-1cfbab5e-61e7-444d-b6fa-2f97a4e489ce.png)
       
-    
-    3.  发表文章
-      3.1 标题为空
-![image](https://user-images.githubusercontent.com/79641956/130357264-3c19ef2c-dc5b-44d9-a2c6-fcefc48d7c45.png)
-
-      3.2
-      3.3
       
+      
+    3.  发表文章/编辑文章
+      3.1 标题为空
+![image](https://user-images.githubusercontent.com/79641956/130357364-0ba752ad-9860-4d19-bd48-dc05f817698d.png)
+
+      3.2  文章内容为空
+![image](https://user-images.githubusercontent.com/79641956/130357382-f062d24a-5c09-4f99-bced-c1c14b189b65.png)
+
+
+
+    4.  用户个人信息的修改
+      4.1 修改密码时密码为空
+![image](https://user-images.githubusercontent.com/79641956/130357430-57c87d03-6849-4b3c-86cc-16a7cfcc7343.png)
+
+      4.2 修改密码时两次输入的密码不一致
+![image](https://user-images.githubusercontent.com/79641956/130357443-72209817-7442-44e7-8e35-0a280a9aaef0.png)
 
 
 
