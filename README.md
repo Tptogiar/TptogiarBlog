@@ -61,6 +61,21 @@
 ![image-20210822160647972](https://user-images.githubusercontent.com/79641956/130355304-86693f09-fd13-466d-97ad-e82df4390deb.png)
 
 
+## 三  相关环境信息
+
+##### 		1.  jdk版本：  1.8.0_281
+
+![Snipaste_2021-08-22_20-49-09](https://user-images.githubusercontent.com/79641956/130356120-3e5d2abf-2af8-4d44-81f7-54bbbf8ef333.png)
+
+##### 		2.  tomcat版本：  8.0.50
+
+![Snipaste_2021-08-22_20-53-37](https://user-images.githubusercontent.com/79641956/130356115-27c06dbc-41c2-4671-b148-f4c946881fe1.png)
+
+##### 		3.  mysql版本：  8.0
+
+##### 		4.  redis版本：  3.2.100
+
+![Snipaste_2021-08-22_20-56-16](https://user-images.githubusercontent.com/79641956/130356114-6d0a684c-cdab-444b-a0da-309c47407064.png)
 
 
 
