@@ -36,14 +36,26 @@
                 ![image-20210822165114226](https://user-images.githubusercontent.com/79641956/130350515-8d04a494-62cd-48e1-b861-72c084ecad3a.png)   
 ######      2.3.2  删除文章
 ![image-20210822155107647](https://user-images.githubusercontent.com/79641956/130355266-c0075736-c455-4fa2-ad13-ac9825f8a853.png)
+![image-20210822160455522](https://user-images.githubusercontent.com/79641956/130355293-3d21e411-8942-4ece-9843-53a320e84257.png)
+![image-20210822160601423](https://user-images.githubusercontent.com/79641956/130355297-5a46b62b-9f97-44c8-9170-0556a603f364.png)
 
 
                 
 ### 	3.  个人信息
-      
+      ![image-20210822160821306](https://user-images.githubusercontent.com/79641956/130355309-c157a6c4-f90e-44f9-bfdc-577cb67a0d9b.png)
+![image-20210822160844466](https://user-images.githubusercontent.com/79641956/130355312-c0bf2197-d9db-40f7-b089-608454ded214.png)
+
 ######        3.1 修改头像
+![image-20210822160945337](https://user-images.githubusercontent.com/79641956/130355316-7990fb4b-5892-4470-8370-05396460726c.png)
+![image-20210822161018032](https://user-images.githubusercontent.com/79641956/130355319-f6373ed0-f28d-484d-bd75-c100602ddd25.png)
+
 ######        3.2 修改个人信息
+![image-20210822161130866](https://user-images.githubusercontent.com/79641956/130355323-c29c191e-81c7-4b4d-9285-6f2049857474.png)
+![image-20210822161132817](https://user-images.githubusercontent.com/79641956/130355328-6532a34c-8601-4ec4-beb2-f10260ad55b3.png)
+![image-20210822161215973](https://user-images.githubusercontent.com/79641956/130355333-8b6c1bec-d4b5-4c1f-a9a4-f95c67937ac4.png)
+
 ### 	4.  登出
+![image-20210822160647972](https://user-images.githubusercontent.com/79641956/130355304-86693f09-fd13-466d-97ad-e82df4390deb.png)
 
 
 这是一个简单的个人博客，
