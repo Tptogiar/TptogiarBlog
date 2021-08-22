@@ -83,9 +83,9 @@
 
     1.注册
       1.1.1用户名已被其他用户使用
-    ![image](https://user-images.githubusercontent.com/79641956/130356995-641105f7-5efc-4094-b291-75c6e3939037.png)
+![image](https://user-images.githubusercontent.com/79641956/130356995-641105f7-5efc-4094-b291-75c6e3939037.png)
         1.1.2用户名可用
-    ![image](https://user-images.githubusercontent.com/79641956/130357020-046d4360-a9bc-4510-9481-55bd5115c11c.png)
+![image](https://user-images.githubusercontent.com/79641956/130357020-046d4360-a9bc-4510-9481-55bd5115c11c.png)
       1.2.1  密码格式不正确
     ![image](https://user-images.githubusercontent.com/79641956/130357000-6b0829de-7b56-4a9e-9dbb-c0e4e4bb8e86.png)
         1.2.2  密码格式正确
@@ -111,7 +111,7 @@
     
     3.  发表文章
       3.1 标题为空
-      ![image](https://user-images.githubusercontent.com/79641956/130357264-3c19ef2c-dc5b-44d9-a2c6-fcefc48d7c45.png)
+![image](https://user-images.githubusercontent.com/79641956/130357264-3c19ef2c-dc5b-44d9-a2c6-fcefc48d7c45.png)
       3.2
       3.3
       
