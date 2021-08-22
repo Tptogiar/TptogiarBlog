@@ -35,7 +35,8 @@
 ![image-20210822155057186](https://user-images.githubusercontent.com/79641956/130355160-82ef8ddc-e7a7-4422-9d61-3f2d9fb5b280.png)
                 ![image-20210822165114226](https://user-images.githubusercontent.com/79641956/130350515-8d04a494-62cd-48e1-b861-72c084ecad3a.png)   
 ######      2.3.2  删除文章
-             ![image-20210822155059362](https://user-images.githubusercontent.com/79641956/130355234-13046fcf-9d98-470b-9802-b6017044c269.png)
+![image-20210822155107647](https://user-images.githubusercontent.com/79641956/130355266-c0075736-c455-4fa2-ad13-ac9825f8a853.png)
+
 
                 
 ### 	3.  个人信息
