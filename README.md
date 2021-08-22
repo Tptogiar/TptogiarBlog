@@ -84,34 +84,47 @@
     1.注册
       1.1.1用户名已被其他用户使用
 ![image](https://user-images.githubusercontent.com/79641956/130356995-641105f7-5efc-4094-b291-75c6e3939037.png)
+
         1.1.2用户名可用
 ![image](https://user-images.githubusercontent.com/79641956/130357020-046d4360-a9bc-4510-9481-55bd5115c11c.png)
+
       1.2.1  密码格式不正确
-    ![image](https://user-images.githubusercontent.com/79641956/130357000-6b0829de-7b56-4a9e-9dbb-c0e4e4bb8e86.png)
+![image](https://user-images.githubusercontent.com/79641956/130357000-6b0829de-7b56-4a9e-9dbb-c0e4e4bb8e86.png)
+    
         1.2.2  密码格式正确
-    ![image](https://user-images.githubusercontent.com/79641956/130357072-71a494ae-5d46-4fd0-b6fc-391733ab795f.png)
+![image](https://user-images.githubusercontent.com/79641956/130357072-71a494ae-5d46-4fd0-b6fc-391733ab795f.png)
+    
       1.3.1  两次输入的密码不一致
-    ![image](https://user-images.githubusercontent.com/79641956/130357084-502ccd58-4c83-43e4-9990-00d84ee3cb21.png)
+![image](https://user-images.githubusercontent.com/79641956/130357084-502ccd58-4c83-43e4-9990-00d84ee3cb21.png)
+    
         1.3.2  两次输入密码一致
-    ![image](https://user-images.githubusercontent.com/79641956/130357091-3a7ff82d-8c0c-46db-8159-9bc6007c4e47.png)
+![image](https://user-images.githubusercontent.com/79641956/130357091-3a7ff82d-8c0c-46db-8159-9bc6007c4e47.png)
+    
       1.4.1  电子邮箱格式不正确
-    ![image](https://user-images.githubusercontent.com/79641956/130357117-1db32b17-e259-4dba-b121-9b38edbe266d.png)
+![image](https://user-images.githubusercontent.com/79641956/130357117-1db32b17-e259-4dba-b121-9b38edbe266d.png)
+    
         1.4.2  电子邮箱已被注册
-    ![image](https://user-images.githubusercontent.com/79641956/130357128-35a08df4-bafb-4bd0-8aec-76999368c16a.png)
+![image](https://user-images.githubusercontent.com/79641956/130357128-35a08df4-bafb-4bd0-8aec-76999368c16a.png)
+    
         1.4.3  电子邮箱格式正确
-    ![image](https://user-images.githubusercontent.com/79641956/130357143-0f88bb68-e66b-4563-adda-b111136fdef0.png)
+![image](https://user-images.githubusercontent.com/79641956/130357143-0f88bb68-e66b-4563-adda-b111136fdef0.png)
+    
       1.5.1 验证码不正确
-    ![image](https://user-images.githubusercontent.com/79641956/130357157-663f82be-c4c0-499d-af03-55df18877b7d.png)
+![image](https://user-images.githubusercontent.com/79641956/130357157-663f82be-c4c0-499d-af03-55df18877b7d.png)
+    
     
     2. 登录
       2.1 用户名或密码错误
-      ![image](https://user-images.githubusercontent.com/79641956/130357195-98a65c38-2c7a-4f38-aab3-12e7e9e38725.png)
+![image](https://user-images.githubusercontent.com/79641956/130357195-98a65c38-2c7a-4f38-aab3-12e7e9e38725.png)
+      
       2.2 验证码不正确
-      ![image](https://user-images.githubusercontent.com/79641956/130357211-1cfbab5e-61e7-444d-b6fa-2f97a4e489ce.png)
+![image](https://user-images.githubusercontent.com/79641956/130357211-1cfbab5e-61e7-444d-b6fa-2f97a4e489ce.png)
+      
     
     3.  发表文章
       3.1 标题为空
 ![image](https://user-images.githubusercontent.com/79641956/130357264-3c19ef2c-dc5b-44d9-a2c6-fcefc48d7c45.png)
+
       3.2
       3.3
       
