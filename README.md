@@ -31,6 +31,11 @@
 ![image-20210822155300207](https://user-images.githubusercontent.com/79641956/130350504-1085234b-1f46-434c-84ea-8bf639294890.png)
 
 #### 		2.3  管理文章
+######      2.3.1  编辑文章
+![image-20210822155057186](https://user-images.githubusercontent.com/79641956/130355160-82ef8ddc-e7a7-4422-9d61-3f2d9fb5b280.png)
+
+######      2.3.2  删除文章
+![image-20210822155057186](https://user-images.githubusercontent.com/79641956/130355169-6df67bd0-8e5c-40c8-a608-6c568ed41d48.png)
 
 ​								![image-20210822155141348](https://user-images.githubusercontent.com/79641956/130350513-a3b96007-9891-4a71-a28d-44eefef83049.png)
                 ![image-20210822165114226](https://user-images.githubusercontent.com/79641956/130350515-8d04a494-62cd-48e1-b861-72c084ecad3a.png)   
