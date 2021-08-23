@@ -1,6 +1,11 @@
 # TptogiarBlog_BS-Tomcat-Redis-AJAX
 [TOC]
 
+
+项目效果：http://81.68.127.234:8080/TptogiarBlog/
+
+
+
 ## 一 Introduction
 
 ​		这是一个简单的练手的个人博客项目，主要功能有用户的注册/登录/登出等，以及文章的撰写/发布/浏览/管理等。
