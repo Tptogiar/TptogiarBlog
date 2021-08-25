@@ -1,26 +1,4 @@
-- [TptogiarBlog_BS-Tomcat-Redis-AJAX](#tptogiarblog-bs-tomcat-redis-ajax)
-- [项目效果：http://81.68.127.234:8080/TptogiarBlog/](#-----http---8168127234-8080-tptogiarblog-)
-  * [一 Introduction](#--introduction)
-  * [二 QuickStart](#--quickstart)
-    + [1.  注册](#1----)
-    + [2.  登录](#2----)
-      - [2.1发表文章](#21----)
-      - [2.2查看文章](#22----)
-      - [2.3  管理文章](#23------)
-          + [2.3.1  编辑文章](#231------)
-          + [2.3.2  删除文章](#232------)
-    + [3.  个人信息](#3------)
-          + [3.1 修改头像](#31-----)
-          + [3.2 修改个人信息](#32-------)
-    + [4.  登出](#4----)
-  * [三  相关环境信息](#---------)
-        * [1.  jdk版本：  1.8.0_281](#1--jdk-----180-281)
-        * [2.  tomcat版本：  8.0.50](#2--tomcat-----8050)
-        * [3.  mysql版本：  8.0](#3--mysql-----80)
-        * [4.  redis版本：  3.2.100](#4--redis-----32100)
-  * [四  异常操作响应](#---------)
 
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 
 
