@@ -3,8 +3,8 @@
 
 # 项目效果：http://81.68.127.234:8080/TptogiarBlog/
 
-- [Introduction](#Introduction)
-- [QuickStart](#QuickStart)
+- [Introduction](#一 Introduction)
+- [QuickStart](#二 QuickStart)
   - [注册](#注册)
 - [相关环境信息](#相关环境信息)
 
