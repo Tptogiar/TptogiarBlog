@@ -1,32 +1,12 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# TptogiarBlog_BS-Tomcat-Redis-AJAX
-
-
-
+# Tptogiar的个人博客
 
 # 项目效果：http://81.68.127.234:8080/TptogiarBlog/
 
-
+- [Introduction](#Introduction)
+- [QuickStart](#QuickStart)
+  - [注册](#注册)
+- [相关环境信息](#相关环境信息)
 
 
 
