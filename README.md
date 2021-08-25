@@ -3,7 +3,7 @@
 
 # 项目效果：http://81.68.127.234:8080/TptogiarBlog/
 
-#目录
+# 目录
 - [一  Introduction](#一-Introduction)
 - [二  QuickStart](#二-QuickStart)
   - [1.注册](#1--注册)
