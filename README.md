@@ -23,7 +23,7 @@
   - [4.redis版本](#4--redis版本--32100) 
 - [四  异常操作响应](#四--异常操作响应) 
 
-<br>
+<br\>
 
 ## 一 Introduction
 
@@ -164,7 +164,3 @@
 
       4.2 修改密码时两次输入的密码不一致
 ![image](https://user-images.githubusercontent.com/79641956/130357443-72209817-7442-44e7-8e35-0a280a9aaef0.png)
-
-
-
-
