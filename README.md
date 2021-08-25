@@ -5,8 +5,13 @@
 
 - [Introduction](#一-Introduction)
 - [QuickStart](#二-QuickStart)
-  - [注册](#注册)
-- [相关环境信息](#相关环境信息)
+  - [注册](#1.--注册)
+  - [登录](#2.--登录)
+    - [发表文章](#2.1--发表文章)
+    - [查看文章](#2.2--查看文章)
+    - [管理文章](#2.3--管理文章)
+  - [个人信息](#3.--个人信息) 
+- [相关环境信息](三--相关环境信息)
 
 
 
@@ -29,14 +34,14 @@
 
 ![image-20210822152915926](https://user-images.githubusercontent.com/79641956/130350485-dbd6421a-9db6-4848-9552-0bb86e38964f.png)
 
-#### 		2.1发表文章
+#### 		2.1  发表文章
 
 ![image-20210822154909867](https://user-images.githubusercontent.com/79641956/130350495-fbdaf95c-bfa4-429d-8c9f-a27c13a9ff95.png)
 
 ![image-20210822154914812](https://user-images.githubusercontent.com/79641956/130350498-f596c401-c57c-4efd-ba74-660c74bb9d5b.png)
 ![image-20210822154936731](https://user-images.githubusercontent.com/79641956/130355067-3b88adef-d833-4d21-a59d-1a9ea836c34b.png)
 
-#### 		2.2查看文章
+#### 		2.2  查看文章
 ![image-20210822155300207](https://user-images.githubusercontent.com/79641956/130350504-1085234b-1f46-434c-84ea-8bf639294890.png)
 
 #### 		2.3  管理文章
