@@ -1,7 +1,9 @@
 
 # Tptogiar的个人博客
 
-# [项目效果：81.68.127.234/TptogiarBlog](http://81.68.127.234/TptogiarBlog)
+个人博客
+
+# [项目效果：81.68.127.234/TptogiarBlog](http://81.68.127.234/TptogiarBlog/)
 
 # 目录
 - [一  Introduction](#一-Introduction)
